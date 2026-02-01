@@ -17,6 +17,10 @@ public:
     MainPanel(QWidget *parent = nullptr);
     ~MainPanel();
 
+public slots:
+    void onSpeechPartial(const QString &text);
+    void onSpeechFinal(const QString &text);
+
 private:
     Ui::MainPanel *ui;
 };

@@ -13,6 +13,16 @@
   <property name="windowTitle">
    <string>MainPanel</string>
   </property>
+  <widget class="QTextEdit" name="textEditSubtitles">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>751</width>
+     <height>271</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

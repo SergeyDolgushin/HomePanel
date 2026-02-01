@@ -6,6 +6,7 @@
 
 #ifdef Q_OS_ANDROID
 #include "androidHelpers/androidpermissions.h"
+#include "audio/speechrecognizer.h"
 #endif
 
 #include "audio/audiohandler.h"
@@ -31,6 +32,22 @@ int main(int argc, char *argv[])
     QObject::connect(perm, &AndroidPermissions::microphonePermissionResult, [](bool granted){
         qDebug() << "microphonePermissionResult:" << granted;
         if (granted) {
+
+            // инициализируем SpeechRecognizer и подключаем сигналы к MainPanel
+            SpeechRecognizer::instance()->init();
+            SpeechRecognizer::instance()->startListening();
+
+            // подключаем UI: ищем существующий MainPanel в приложении
+            QObject *top = qApp->topLevelWidgets().isEmpty() ? nullptr : qApp->topLevelWidgets().first();
+            MainPanel *mp = qobject_cast<MainPanel*>(top);
+            if (mp) {
+                QObject::connect(SpeechRecognizer::instance(), &SpeechRecognizer::partialResult,
+                                 mp, [mp](const QString &t){ mp->onSpeechPartial(t); });
+                QObject::connect(SpeechRecognizer::instance(), &SpeechRecognizer::finalResult,
+                                 mp, [mp](const QString &t){ mp->onSpeechFinal(t); });
+            }
+
+
             // Демонстрация: записываем 5 секунд и затем воспроизводим
             AudioHandler::instance()->startRecording();
             QTimer::singleShot(5000, [](){

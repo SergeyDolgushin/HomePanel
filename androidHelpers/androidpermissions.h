@@ -1,6 +1,7 @@
 #ifndef ANDROIDPERMISSIONS_H
 #define ANDROIDPERMISSIONS_H
 
+#include "qjniobject.h"
 #include <QObject>
 #include <QTimer>
 
@@ -15,6 +16,7 @@ public:
 
     // Запросить разрешение (покажет диалог пользователю)
     void requestMicrophonePermission();
+    static QJniObject getActivity();
 
 signals:
     // Сигнал выдаёт текущее состояние после опроса: granted == true, иначе false

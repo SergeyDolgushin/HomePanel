@@ -12,7 +12,29 @@
 #include <jni.h>
 #endif
 
-static QJniObject getActivity()
+// static QJniObject getActivity()
+// {
+//     static QJniObject activity;
+//     static bool initialized = false;
+
+//     if (!initialized && QJniEnvironment().isValid()) {
+//         activity = QJniObject::callStaticObjectMethod(
+//             "org/qtproject/qt/android/QtNative",
+//             "activity",
+//             "()Landroid/app/Activity;"
+//             );
+//         if (activity.isValid()) {
+//             qDebug() << "✅ Activity получена";
+//         } else {
+//             qWarning() << "❌ Activity пока недоступна";
+//         }
+//         initialized = true;
+//     }
+
+//     return activity;
+// }
+
+QJniObject AndroidPermissions::getActivity()
 {
     static QJniObject activity;
     static bool initialized = false;
@@ -108,6 +130,8 @@ void AndroidPermissions::requestMicrophonePermission()
     emit microphonePermissionResult(false);
 #endif
 }
+
+
 
 void AndroidPermissions::pollPermission()
 {
