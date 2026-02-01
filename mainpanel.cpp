@@ -12,3 +12,13 @@ MainPanel::~MainPanel()
 {
     delete ui;
 }
+
+void MainPanel::onSpeechPartial(const QString &text)
+{
+    qDebug() << "UI partial:" << text;
+}
+
+void MainPanel::onSpeechFinal(const QString &text)
+{
+    qDebug() << "UI final:" << text;
+}
