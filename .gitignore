@@ -1,0 +1,95 @@
+# Qt / qmake
+*.pro.user
+*.pro.user.*
+.qmake.stash
+.qmake.cache
+
+# Qt Creator
+*.creator.user
+*.creator
+*.autosave
+*.session
+
+# Common build directories created by Qt Creator / qmake
+build-*/
+_build*/
+*/build-*/
+*/out/
+debug*/
+release*/
+bin/
+obj/
+
+# Generated sources (uic/moc/rcc) - usually in build dir but sometimes generated next to sources
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+ui_*.hpp
+
+# C/C++ object and binary files
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.exe
+
+# Android / Gradle / Java build artifacts
+local.properties        # contains SDK/NDK path (machine-specific)
+.gradle/
+gradle/
+**/build/
+android/.cxx/
+android/.externalNativeBuild/
+android/gradle/
+android/gradle-wrapper.jar
+*.class
+*.dex
+*.apk
+*.ap_
+
+# Keystores / signing files (sensitive)
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# IDEs / editors
+.idea/
+*.iml
+.vscode/
+*.sublime-workspace
+*.sublime-project
+nbproject/
+
+# macOS / Windows temp files
+.DS_Store
+Thumbs.db
+
+# temp / swap
+*~
+*.swp
+*.swo
+*.tmp
+*.log
+
+# Qt Linguist generated files (optional: keep .ts, ignore compiled translations)
+*.qm
+
+# Coverage / profiler
+coverage/
+*.gcda
+*.gcno
+.profdata
+
+# Misc
+dist/
+dist-*/
+release-*/
+
+# Notes:
+# - Keep android/src/, android/AndroidManifest.xml and other Android sources under version control.
+# - If you store prebuilt .so/.aar/.jar files intentionally under android/libs/, remove/adjust ignore rules so they are not excluded.
+#   Example to allow android/libs/*.so keep them: add "!android/libs/*.so" if you later add a rule that would exclude them.
