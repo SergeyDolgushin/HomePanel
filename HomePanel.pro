@@ -10,14 +10,20 @@ CONFIG += c++17
 
 SOURCES += \
     androidHelpers/androidpermissions.cpp \
+    androidHelpers/androidutils.cpp \
     audio/audiohandler.cpp \
+    audio/commandprocessor.cpp \
+    audio/speechcontroller.cpp \
     audio/speechrecognizer.cpp \
     main.cpp \
     mainpanel.cpp
 
 HEADERS += \
     androidHelpers/androidpermissions.h \
+    androidHelpers/androidutils.h \
     audio/audiohandler.h \
+    audio/commandprocessor.h \
+    audio/speechcontroller.h \
     audio/speechrecognizer.h \
     mainpanel.h
 
@@ -40,7 +46,8 @@ DISTFILES += \
     android/res/values/libs.xml \
     android/res/xml/qtprovider_paths.xml \
     android/src/org/dsa/homepanel/PermissionsHelper.java \
-    android/src/org/dsa/homepanel/SpeechRecognizerHelper.java
+    android/src/org/dsa/homepanel/SpeechRecognizerHelper.java \
+    android/src/org/dsa/homepanel/AndroidUtils.java
 
 contains(ANDROID_TARGET_ARCH,arm64-v8a) {
     ANDROID_PACKAGE_SOURCE_DIR = \

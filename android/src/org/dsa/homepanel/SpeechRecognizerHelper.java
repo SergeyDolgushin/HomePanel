@@ -21,6 +21,7 @@ public class SpeechRecognizerHelper {
     private static native void nativeOnSpeechResult(String text, boolean isFinal);
 
     public static void init(final Activity activity) {
+         AndroidUtils.setActivity(activity);
         if (activity == null) {
             Log.w(TAG, "init: activity == null");
             return;
