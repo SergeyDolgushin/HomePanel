@@ -49,10 +49,10 @@ int main(int argc, char *argv[])
 
 
             // Демонстрация: записываем 5 секунд и затем воспроизводим
-            AudioHandler::instance()->startRecording();
-            QTimer::singleShot(5000, [](){
-                AudioHandler::instance()->stopAndPlay();
-            });
+            // AudioHandler::instance()->startRecording();
+            // QTimer::singleShot(5000, [](){
+            //     AudioHandler::instance()->stopAndPlay();
+            // });
         } else {
             qDebug() << "No microphone permission, cannot record";
         }
