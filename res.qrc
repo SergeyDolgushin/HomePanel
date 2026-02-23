@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>android/res/timerIcon.png</file>
+    </qresource>
+</RCC>

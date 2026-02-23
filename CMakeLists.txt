@@ -27,6 +27,10 @@ qt_add_qml_module(appHomePanel
         QML_FILES ui/viewer/AnimationManager.qml
         QML_FILES ui/calendar/CalendarTile.qml
         QML_FILES ui/calendar/CalendarView.qml
+        RESOURCES res.qrc
+        QML_FILES ui/timer/TimerMenuWidget.qml
+        QML_FILES ui/timer/TimerCreateDialog.qml
+        QML_FILES ui/timer/TimerWidget.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
