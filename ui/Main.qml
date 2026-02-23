@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import "drawer"
 import "clock"
 import "viewer"
+import "calendar"
 
 Window {
 
@@ -58,24 +59,32 @@ Window {
                 text: "Тестовый элемент"
                 color: "#333333"
             }
+
+            // Тестовая Кнопка открытия
+            Button {
+                text: "🖼 Просмотр фото"
+                anchors.centerIn: parent
+                onClicked: photoViewer.active = true
+
+            }
         }
 
     }
 
-    // Кнопка открытия
-        Button {
-            text: "🖼 Просмотр фото"
-            anchors.centerIn: parent
-            onClicked: photoViewer.active = true
+    // Calendar View (поверх всего)
+    CalendarView {
+        id: calendarView
+        anchors.fill: parent
+        z: 100
+        active: true  // Для теста - календарь открыт при запуске
+    }
 
-        }
-
-        // Photo Viewer (поверх всего)
-        PhotoViewer {
-            id: photoViewer
-            anchors.fill: parent
-            z: 100
-        }
+    // Photo Viewer (поверх всего)
+    PhotoViewer {
+        id: photoViewer
+        anchors.fill: parent
+        z: 150
+    }
 
     Component.onCompleted: {
         console.log(root.width, root.height);
