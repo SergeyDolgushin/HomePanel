@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import "drawer"
 import "clock"
 import "viewer"
+import "calendar"
 
 Window {
 
@@ -70,12 +71,19 @@ Window {
 
     }
 
+    // Calendar View (поверх всего)
+    CalendarView {
+        id: calendarView
+        anchors.fill: parent
+        z: 100
+        active: true  // Для теста - календарь открыт при запуске
+    }
 
     // Photo Viewer (поверх всего)
     PhotoViewer {
         id: photoViewer
         anchors.fill: parent
-        z: 100
+        z: 150
     }
 
     Component.onCompleted: {

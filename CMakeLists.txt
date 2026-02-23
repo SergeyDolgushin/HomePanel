@@ -26,6 +26,7 @@ qt_add_qml_module(appHomePanel
         SOURCES backend/androidutils.h backend/androidutils.cpp
         QML_FILES ui/viewer/AnimationManager.qml
         QML_FILES ui/calendar/CalendarTile.qml
+        QML_FILES ui/calendar/CalendarView.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
