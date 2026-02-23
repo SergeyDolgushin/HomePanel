@@ -58,24 +58,25 @@ Window {
                 text: "Тестовый элемент"
                 color: "#333333"
             }
+
+            // Тестовая Кнопка открытия
+            Button {
+                text: "🖼 Просмотр фото"
+                anchors.centerIn: parent
+                onClicked: photoViewer.active = true
+
+            }
         }
 
     }
 
-    // Кнопка открытия
-        Button {
-            text: "🖼 Просмотр фото"
-            anchors.centerIn: parent
-            onClicked: photoViewer.active = true
 
-        }
-
-        // Photo Viewer (поверх всего)
-        PhotoViewer {
-            id: photoViewer
-            anchors.fill: parent
-            z: 100
-        }
+    // Photo Viewer (поверх всего)
+    PhotoViewer {
+        id: photoViewer
+        anchors.fill: parent
+        z: 100
+    }
 
     Component.onCompleted: {
         console.log(root.width, root.height);

@@ -205,7 +205,7 @@ Item {
 
 
     Component.onCompleted: {
-        console.log("Clock: width=", width, "height=", height)
+        // console.log("Clock: width=", width, "height=", height)
         updateClock()
     }
 }
